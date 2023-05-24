@@ -2,7 +2,7 @@
 
 /**
  * _myexit - exits the shell
- * @info: Structure 
+ * @info: Structure
  *  Return: 0 if info.argv[0] != "exit"
  */
 int _myexit(info_t *info)
@@ -36,7 +36,7 @@ int _mycd(info_t *info)
 {
 	int i;
 	char *s, *d, buffer[1024];
-	
+
 	s = getcwd(buffer, 1024);
 	if (!s)
 		_puts("TODO: >>getcwd failure emsg here<<\n");
