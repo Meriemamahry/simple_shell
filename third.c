@@ -16,7 +16,7 @@ char **create_argv(char *input_buffer, list_t **path)
 	while (neew[i])
 	{
 		if (neew[i] == ' ' &&
-			(nee[i + 1] &&
+			(neew[i + 1] &&
 				(neew[i + 1] != ' ' &&
 					neew[i + 1] != '\n')))
 			argc += 1;
@@ -53,7 +53,8 @@ char **create_argv(char *input_buffer, list_t **path)
 char *get_path(char *buffer, list_t **path)
 {
 	char *input;
-	int *aux, *command = NULL;
+	char *aux;
+	int *command = NULL;
 	char *slashc, *slashi, *input_buffer;
 	struct stat status;
 	list_t *list_pointer = *path;
