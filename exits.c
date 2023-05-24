@@ -2,17 +2,16 @@
 
 /**
  **_strncpy - copies a string
- *@dest: the destination string to be copied to
- *@src: the source string
- *@n: the amount of characters to be copied
- *Return: the concatenated string
+ *@dest: destination string 
+ *@src: source string
+ *@n: characters to be copied
+ *Return: concatenated string
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i, j;
 	char *s = dest;
-
-	i = 0;
+	int i = 0, j;
+	
 	while (src[i] != '\0' && i < n - 1)
 	{
 		dest[i] = src[i];
@@ -31,11 +30,11 @@ char *_strncpy(char *dest, char *src, int n)
 }
 
 /**
- **_strncat - concatenates two strings
- *@dest: the first string
- *@src: the second string
- *@n: the amount of bytes to be maximally used
- *Return: the concatenated string
+ **_strncat - concatenate string
+ *@dest: string
+ *@src: string
+ *@n: int
+ *Return: concatenated string
  */
 char *_strncat(char *dest, char *src, int n)
 {
