@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * ctrl_c - detect the CTRL+C signal and print another line 
+ * ctrl_c - detect the CTRL+C signal and print another line
  * @x: ...
  */
 void ctrl_c(__attribute__((unused)) int x)
