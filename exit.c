@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
  **_strncpy - make a copy of a string
