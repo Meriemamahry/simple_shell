@@ -54,7 +54,7 @@ char *get_path(char *buffer, list_t **path)
 {
 	char *input;
 	char *aux;
-	int *command = NULL;
+	char *command = NULL;
 	char *slashc, *slashi, *input_buffer;
 	struct stat status;
 	list_t *list_pointer = *path;
