@@ -11,6 +11,7 @@ int main(__attribute__((unused)) int ac, char **av, char **env)
 list_t *path;
 char *program_name = av[0];
 int aux, mode = 0;
+	
 signal(SIGINT, SIG_IGN);
 path = list_path(env);
 if (isatty(0))
