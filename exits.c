@@ -2,7 +2,7 @@
 
 /**
  **_strncpy - copies a string
- *@dest: destination string 
+ *@dest: destination string
  *@src: source string
  *@n: characters to be copied
  *Return: concatenated string
@@ -11,7 +11,7 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	char *s = dest;
 	int i = 0, j;
-	
+
 	while (src[i] != '\0' && i < n - 1)
 	{
 		dest[i] = src[i];

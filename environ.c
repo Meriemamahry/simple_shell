@@ -21,7 +21,6 @@ char *_getenv(info_t *info, const char *name)
 {
 	char *s;
 	list_t *n = info->env;
-	
 
 	while (n)
 	{
@@ -72,14 +71,14 @@ int _myunsetenv(info_t *info)
 
 /**
  * populate_env_list - env list
- * @info: Structure 
+ * @info: Structure
  * Return: 0
  */
 int populate_env_list(info_t *info)
 {
 	size_t i;
 	list_t *n = NULL;
-	
+
 	for (i = 0; environ[i]; i++)
 		add_node_end(&n, environ[i], 0);
 	info->env = n;
