@@ -38,11 +38,11 @@ int check_syntax(char *buffer)
  */
 int check_builtin(char *command)
 {
-	if (!str_twins(command, "exit") || !str_twins(command, "env")) 
+	if (!str_twins(command, "exit") || !str_twins(command, "env"))
 	{
 		return (0);
 	}
-	if (!str_twins(command, "help")) 
+	if (!str_twins(command, "help"))
 	{
 		return (0);
 	}
