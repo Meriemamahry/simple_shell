@@ -20,15 +20,15 @@ int _myenv(info_t *info)
 char *_getenv(info_t *info, const char *name)
 {
 	char *s;
-	list_t *node = info->env;
+	list_t *n = info->env;
 	
 
-	while (node)
+	while (n)
 	{
-		s = starts_with(node->str, name);
+		s = starts_with(n->str, name);
 		if (s && *s)
-			return (p);
-		node = node->next;
+			return (s);
+		n = n->next;
 	}
 	return (NULL);
 }
