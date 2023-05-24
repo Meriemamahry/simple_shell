@@ -40,8 +40,8 @@ char *str_cpy(char *dest, char *src)
  * str_dup - gives pointer to a new string which is a duplicate of str
  * @str: string to duplicate
  * Return: pointer to the duplicated string
- * 	  or NULL if str = NULL
- * 	  or if insufficient memory was available.
+ * or NULL if str = NULL
+ * or if insufficient memory was available.
  */
 char *str_dup(char *str)
 {
