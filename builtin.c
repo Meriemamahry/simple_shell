@@ -44,7 +44,7 @@ if (!info->argv[1])
 {
 dir = _getenv(info, "HOME=");
 if (!dir)
-chdir_ret = 
+chdir_ret =
 chdir((dir = _getenv(info, "PWD=")) ? dir : "/");
 else
 chdir_ret = chdir(dir);
@@ -58,7 +58,7 @@ _putchar('\n');
 return (1);
 }
 _puts(_getenv(info, "OLDPWD=")), _putchar('\n');
-chdir_ret = 
+chdir_ret =
 chdir((dir = _getenv(info, "OLDPWD=")) ? dir : "/");
 }
 else
