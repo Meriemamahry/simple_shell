@@ -11,7 +11,7 @@ int main(__attribute__((unused)) int ac, char **av, char **env)
 list_t *path;
 char *program_name = av[0];
 int aux, mode = 0;
-	
+
 signal(SIGINT, SIG_IGN);
 path = list_path(env);
 if (isatty(0))
@@ -26,8 +26,8 @@ return (aux);
  * @path: take the path of current directory
  * @env: environment variable
  * @program_name: argv[0] of main
- * @mode: choose if it would run the shell in interactive or non-interactive mode
- * Return: 0 (success)
+ * @mode: choose mode
+ * Return: 0
  */
 int start_shell(list_t *path, char **env, char *program_name, int mode)
 {
@@ -76,7 +76,7 @@ int execute_buffer(char *buffer, list_t *path, char **env, char *program_name)
 {
 char *buffer_tr, *input_buffer, *new_buffer;
 int aux, final, exe_result = 0;
-	
+
 buffer_tr = clean_comments(buffer);
 input_buffer = str_tr(buffer_tr, '\t', ' ');
 if (not_empty(input_buffer))
