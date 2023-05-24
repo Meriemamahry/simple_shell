@@ -78,7 +78,7 @@ int execute_buffer(char *buffer, list_t *path, char **env, char *program_name)
 	int aux, final, exe_result = 0;
 
 	buffert = clean_comments(buffer);
-	input = str_tr(buffer_tr, '\t', ' ');
+	input = str_tr(buffert, '\t', ' ');
 	if (not_empty(input))
 	{
 		final = str_count(input, ';');
