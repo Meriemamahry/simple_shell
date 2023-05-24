@@ -1,1 +1,1 @@
-This readme file for Simple shell project
+simple_shell
