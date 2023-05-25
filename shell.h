@@ -149,7 +149,7 @@ int alpha(int);
 int toint(char *);
 
 int _errt(char *);
-void print_error(info_t *, char *);
+void printerr(info_t *, char *);
 int printDec(int, int);
 char *convnum(long int, int, int);
 void remcomt(char *);
