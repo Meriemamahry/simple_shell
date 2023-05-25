@@ -14,10 +14,10 @@ int builtin_ret = 0;
 while (r != -1 && builtin_ret != -2)
 {
 clear_info(info);
-if (interactive(info))
+if (intera(info))
 _puts("$ ");
-_eputchar(BUF_FLUSH);
-r = get_input(info);
+ptu_char(BUF_FLUSH);
+r = getIn(info);
 if (r != -1)
 {
 set_info(info, av);
@@ -25,13 +25,13 @@ builtin_ret = find_builtin(info);
 if (builtin_ret == -1)
 find_cmd(info);
 }
-else if (interactive(info))
+else if (intera(info))
 _putchar('\n');
 free_info(info, 0);
 }
-write_history(info);
+writeHistory(info);
 free_info(info, 1);
-if (!interactive(info) && info->status)
+if (!intera(info) && info->status)
 exit(info->status);
 if (builtin_ret == -2)
 {
@@ -51,13 +51,13 @@ int find_builtin(info_t *info)
 {
 int i, built_in = -1;
 builtin_table builtintbl[] = {
-{"exit", _myexit},
+{"exit", exiit},
 {"env", _myenv},
-{"help", _myhelp},
+{"help", _ch},
 {"history", _myhistory},
 {"setenv", _mysetenv},
 {"unsetenv", _myunsetenv},
-{"cd", _mycd},
+{"cd", change_dir},
 {"alias", _myalias},
 {NULL, NULL}
 };
@@ -89,7 +89,7 @@ info->line_count++;
 info->linecount_flag = 0;
 }
 for (i = 0, m = 0; info->arg[i]; i++)
-if (!is_delim(info->arg[i], " \t\n"))
+if (!delim(info->arg[i], " \t\n"))
 m++;
 if (!m)
 return;
@@ -101,13 +101,13 @@ fork_cmd(info);
 }
 else
 {
-if ((interactive(info) || _getenv(info, "PATH=")
+if ((intera(info) || _getenv(info, "PATH=")
 || info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
 fork_cmd(info);
 else if (*(info->arg) != '\n')
 {
 info->status = 127;
-print_error(info, "not found\n");
+printerr(info, "not found\n");
 }
 }
 }
@@ -144,7 +144,7 @@ if (WIFEXITED(info->status))
 {
 info->status = WEXITSTATUS(info->status);
 if (info->status == 126)
-print_error(info, "Permission denied\n");
+printerr(info, "Permission denied\n");
 }
 }
 }
