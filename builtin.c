@@ -11,7 +11,7 @@ int checks;
 
 if (p->argv[1])
 {
-checks = _erratoi(p->argv[1]);
+checks = _errt(p->argv[1]);
 if (checks == -1)
 {
 p->status = 2;
@@ -45,7 +45,7 @@ if (!i->argv[1])
 {
 d = _getenv(i, "HOME=");
 if (!d)
-chdir_ret =
+ret =
 chdir((d = _getenv(i, "PWD=")) ? d : "/");
 else
 ret = chdir(d);
@@ -59,19 +59,19 @@ _putchar('\n');
 return (1);
 }
 _puts(_getenv(i, "OLDPWD=")), _putchar('\n');
-chdir_ret =
-chdir((dir = _getenv(i, "OLDPWD=")) ? dir : "/");
+ret =
+chdir((d = _getenv(i, "OLDPWD=")) ? d : "/");
 }
 else
-chdir_ret = chdir(i->argv[1]);
-if (chdir_ret == -1)
+ret = chdir(i->argv[1]);
+if (ret == -1)
 {
 printerr(i, "can't cd to ");
 ptu(i->argv[1]), ptu_char('\n');
 }
 else
 {
-_setenv(i, "OLDPWD", _getenv(info, "PWD="));
+_setenv(i, "OLDPWD", _getenv(i, "PWD="));
 _setenv(i, "PWD", getcwd(buffer, 1024));
 }
 return (0);
