@@ -118,8 +118,8 @@ int loophsh(char **);
 
 void ptu(char *);
 int ptu_char(char);
-int _fdt(char , int );
-int _fds(char *, int );
+int _fdt(char, int);
+int _fds(char *, int);
 
 int _strlen(char *);
 int _strcmp(char *, char *);
