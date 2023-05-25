@@ -34,11 +34,9 @@ return (-2);
  */
 int change_dir(info_t *i)
 {
-int ret;
-char *s, *d;
-char buffer[1024];
+int ret, *s, *d, buffer[1024];
 
-s= getcwd(buffer, 1024);
+s = getcwd(buffer, 1024);
 if (!s)
 _puts("TODO: >>getcwd failure emsg here<<\n");
 if (!i->argv[1])
@@ -71,8 +69,8 @@ ptu(i->argv[1]), ptu_char('\n');
 }
 else
 {
-_setenv(i, "OLDPWD", _getenv(i, "PWD="));
-_setenv(i, "PWD", getcwd(buffer, 1024));
+	_setenv(i, "OLDPWD", _getenv(i, "PWD="));
+	_setenv(i, "PWD", getcwd(buffer, 1024));
 }
 return (0);
 }

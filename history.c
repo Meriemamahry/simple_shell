@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * getHistory - gets history 
- * @info: struct
+ * getHistory - gets history
+ * @i: struct
  * Return: string
  */
 
@@ -58,12 +58,10 @@ int writeHistory(info_t *i)
  */
 int readHistory(info_t *i)
 {
-	int k;
-	int last = 0, linecount = 0;
+	int k, last = 0, linecount = 0;
 	ssize_t fd, rdlen, f_size = 0;
 	struct stat st;
-	char *buf = NULL;
-	char *filename = get_history_file(i);
+	char *buf = NULL, *filename = get_history_file(i);
 
 	if (!filename)
 		return (0);
@@ -102,7 +100,7 @@ int readHistory(info_t *i)
 }
 
 /**
- * build_history_list - adds input to a history
+ * buildHistory - adds input to a history
  * @i: Structure
  * @b: char
  * @count: histcount
@@ -122,7 +120,7 @@ int buildHistory(info_t *i, char *b, int count)
 }
 
 /**
- * renumber_history - renumbers the history
+ * renumberHistory - renumbers the history
  * @i: Structure
  * Return: new histcount
  */
