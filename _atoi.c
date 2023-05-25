@@ -2,70 +2,70 @@
 
 /**
  * interactive - checks if the shell is in interactive mode
- * @info: address
- *
+ * @info: list
  * Return: 1 or 0
  */
-int interactive(info_t *info)
+int intera(info_t *info)
 {
 return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
 
 /**
- * is_delim - see if character is delimiter
- * @i: char checked
- * @delim: the delimeter string
+ * delim - check if i is delimiter
+ * @s: char
+ * @d: adelimeter 
  * Return: 1 or 0
  */
-int is_delim(char i, char *delim)
+int delim(char s, char *d)
 {
-while (*delim)
-if (*delim++ == i)
+while (*d)
+ if (*d++ == s)
 return (1);
 return (0);
 }
 
 /**
- *_isalpha - see if character is alpha
- *@i: The character to input
+ *alpha - check if c is alpha
+ *@c: The character to input
  *Return: 1 or 0
  */
 
-int _isalpha(int i)
+int alpha(int c)
 {
-if ((i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z'))
-return (1);
-else
+if ((c >= 'a' && c <= 'z'))
+  return (1);
+if (c >= 'A' && c <= 'Z'))
+  return (1);
 return (0);
 }
 
 /**
- *_atoi - take a string and convert it to int
+ *_atoi - convert string to int
  *@str: string to be converted
  *Return: 0 or converted number
  */
 
-int _atoi(char *str)
+int toint(char *k)
 {
-int i, sign = 1, flag = 0, output;
-unsigned int result = 0;
+unsigned int l = 0;
+int i;
+int s = 1, f = 0;
 
-for (i = 0;  str[i] != '\0' && flag != 2; i++)
+for (i = 0;  k[i] != '\0' && f != 2; i++)
 {
-if (str[i] == '-')
-sign *= -1;
-if (str[i] >= '0' && str[i] <= '9')
+if (k[i] == '-')
+s *= -1;
+if (k[i] >= '0' && k[i] <= '9')
 {
-flag = 1;
-result *= 10;
-result += (str[i] - '0');
+f = 1;
+l *= 10;
+l += (k[i] - '0');
 }
-else if (flag == 1)
-flag = 2;
+else if (f == 1)
+f = 2;
 }
-if (sign == -1)
-output = -result;
+if (s == -1)
+return (-result);
 else
-output = result;
-return (output);
+return (result);
 }
