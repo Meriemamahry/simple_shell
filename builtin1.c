@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * _myhistory - gives the history list
+ * hist - gives the history list
  * @i: Structure
  *  Return: 0
  */
@@ -34,7 +34,7 @@ int unsetAlias(info_t *i, char *s)
 }
 
 /**
- * setAias - Sets alias to string
+ * setAlias - Sets alias to string
  * @i: structure
  * @s: the string alias
  *

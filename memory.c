@@ -5,7 +5,7 @@
  * @p: a pointer
  * Return: 1 if it is free or 0.
  */
-int bfree(void **p)
+int f_ree(void **p)
 {
 	if (p && *p)
 	{

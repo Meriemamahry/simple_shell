@@ -33,12 +33,13 @@ char *cpy(char *so, char *st, int nb)
  *@nb: number chars
  *Return: return the concatenated string
  */
-char *_strncat(char *so, char *st, int nb)
+char *_ncat(char *so, char *st, int nb)
 {
-	int i, j = 0;
+	int i = 0, j = 0;
 	char *c = so;
 
-	for (i = 0; so[i] != '\0'; i++);
+	while (so[i] != '\0')
+		i++;
 	while (st[j] != '\0' && j < nb)
 	{
 		so[i] = st[j];
