@@ -161,7 +161,7 @@ int _ch(info_t *);
 int _myhistory(info_t *);
 int _myalias(info_t *);
 
-ssize_t get_input(info_t *);
+ssize_t getIn(info_t *);
 int _getline(info_t *, char **, size_t *);
 void sigHandle(int);
 ssize_t inbuf(info_t *, char **, size_t *);
