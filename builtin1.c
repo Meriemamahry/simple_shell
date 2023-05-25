@@ -88,7 +88,7 @@ int monAlias(info_t *i)
 	char *p = NULL;
 	list_t *t = NULL;
 
-	if (info->argc == 1)
+	if (i->argc == 1)
 	{
 		t = i->alias;
 		while (t)
