@@ -16,7 +16,7 @@ ssize_t inbuf(info_t *i, char **b, size_t *len)
 	{
 		free(*b);
 		*b = NULL;
-		signal(SIGINT, sigintHandler);
+		signal(SIGINT, sigHandle);
 #if USE_GETLINE
 		s = getline(b, &p, stdin);
 #else
@@ -125,7 +125,7 @@ int _getline(info_t *f, char **a, size_t *l)
 	if (i == len)
 		i = len = 0;
 
-	r = read_buf(f, buf, &len);
+	r = readbuf(f, buf, &len);
 	if (r == -1 || (r == 0 && len == 0))
 		return (-1);
 
