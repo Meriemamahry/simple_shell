@@ -54,11 +54,11 @@ builtin_table builtintbl[] = {
 {"exit", _exiit},
 {"env", _myenv},
 {"help", _ch},
-{"history", _myhistory},
+{"history", hist},
 {"setenv", _mysetenv},
 {"unsetenv", _myunsetenv},
 {"cd", change_dir},
-{"alias", _myalias},
+{"alias", monAlias},
 {NULL, NULL}
 };
 
