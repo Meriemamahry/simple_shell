@@ -62,7 +62,7 @@ int printDec(int i, int fd)
 	int k, c = 0;
 
 	if (fd == STDERR_FILENO)
-		__putchar = _eputchar;
+		__putchar = ptu_char;
 	if (i < 0)
 	{
 		abso = -i;
@@ -71,7 +71,7 @@ int printDec(int i, int fd)
 	}
 	else
 		abso = i;
-	current = abso;
+	l = abso;
 	for (k = 1000000000; k > 1; k /= 10)
 	{
 		if (abso / k)
