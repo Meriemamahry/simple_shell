@@ -116,10 +116,10 @@ char *find_path(info_t *, char *, char *);
 
 int loophsh(char **);
 
-void _eputs(char *);
-int _eputchar(char);
-int _putfd(char c, int fd);
-int _putsfd(char *str, int fd);
+void ptu(char *);
+int ptu_char(char);
+int _fdt(char , int );
+int _fds(char *, int );
 
 int _strlen(char *);
 int _strcmp(char *, char *);
@@ -144,20 +144,20 @@ void *_realloc(void *, unsigned int, unsigned int);
 
 int bfree(void **);
 
-int interactive(info_t *);
-int is_delim(char, char *);
-int _isalpha(int);
-int _atoi(char *);
+int intera(info_t *);
+int delim(char, char *);
+int alpha(int);
+int toint(char *);
 
-int _erratoi(char *);
+int _errt(char *);
 void print_error(info_t *, char *);
-int print_d(int, int);
-char *convert_number(long int, int, int);
-void remove_comments(char *);
+int printDec(int, int);
+char *convnum(long int, int, int);
+void remcomt(char *);
 
-int _myexit(info_t *);
-int _mycd(info_t *);
-int _myhelp(info_t *);
+int _exiit(info_t *);
+int change_dir(info_t *);
+int _ch(info_t *);
 
 int _myhistory(info_t *);
 int _myalias(info_t *);
