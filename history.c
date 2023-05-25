@@ -61,7 +61,7 @@ int readHistory(info_t *i)
 	int k, last = 0, linecount = 0;
 	ssize_t fd, rdlen, f_size = 0;
 	struct stat st;
-	char *buf = NULL,*filename = getHistory(i);
+	char *buf = NULL, *filename = getHistory(i);
 
 	if (!filename)
 		return (0);

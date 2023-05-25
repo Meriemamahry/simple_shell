@@ -22,7 +22,7 @@ i++;
  * @c: The character
  * Return: 1
  */
-int _eputchar(char c)
+int ptu_char(char c)
 {
 static char buf[WRITE_BUF_SIZE];
 static int k;

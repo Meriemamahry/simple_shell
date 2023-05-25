@@ -43,7 +43,7 @@ ssize_t inbuf(info_t *i, char **b, size_t *len)
 
 /**
  * getIn - line - the newline
- * @info: structure
+ * @i: structure
  * Return: bytes read
  */
 ssize_t getIn(info_t *i)

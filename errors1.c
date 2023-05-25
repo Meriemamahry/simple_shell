@@ -54,14 +54,14 @@ void printerr(info_t *i, char *s)
  * @f: filedescriptor
  * Return: number
  */
-int printDec(int i, int fd)
+int printDec(int i, int f)
 {
 	int (*__putchar)(char) = _putchar;
 	unsigned int abso;
 	unsigned int l;
 	int k, c = 0;
 
-	if (fd == STDERR_FILENO)
+	if (f == STDERR_FILENO)
 		__putchar = ptu_char;
 	if (i < 0)
 	{
