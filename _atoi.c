@@ -41,8 +41,8 @@ return (0);
 
 /**
  *_atoi - convert string to int
- *@str: string to be converted
- *Return: 0 or converted number
+ *@k string to be converted
+ *Return: converted number
  */
 
 int toint(char *k)
