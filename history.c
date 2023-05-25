@@ -14,7 +14,7 @@ char *getHistory(info_t *i)
 	if (!d)
 		return (NULL);
 	c = malloc(sizeof(char) * (_strlen(d) + _strlen(HIST_FILE) + 2));
-	if (!buf)
+	if (!c)
 		return (NULL);
 	c[0] = 0;
 	_strcpy(c, d);
@@ -61,7 +61,7 @@ int readHistory(info_t *i)
 	int k, last = 0, linecount = 0;
 	ssize_t fd, rdlen, f_size = 0;
 	struct stat st;
-	char *buf = NULL, *filename = get_history_file(i);
+	char *buf = NULL,*filename = getHistory(i);
 
 	if (!filename)
 		return (0);
@@ -86,16 +86,16 @@ int readHistory(info_t *i)
 		if (buf[k] == '\n')
 		{
 			buf[k] = 0;
-			build_history_list(info, buf + last, linecount++);
+			buildHistory(i, buf + last, linecount++);
 			last = k + 1;
 		}
 	if (last != k)
-		build_history_list(i, buf + last, linecount++);
+		buildHistory(i, buf + last, linecount++);
 	free(buf);
 	i->histcount = linecount;
 	while (i->histcount-- >= HIST_MAX)
 		delete_node_at_index(&(i->history), 0);
-	renumber_history(i);
+	renumberHistory(i);
 	return (i->histcount);
 }
 
