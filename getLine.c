@@ -129,16 +129,16 @@ int _getline(info_t *f, char **a, size_t *l)
 	if (r == -1 || (r == 0 && len == 0))
 		return (-1);
 
-	c = _strchr(buf + i, '\n');
+	c = str_chr(buf + i, '\n');
 	k = c ? 1 + (unsigned int)(c - buf) : len;
 	t = _realloc(p, s, s ? s + k : k + 1);
 	if (!t)
 		return (p ? free(p), -1 : -1);
 
 	if (s)
-		_strncat(t, buf + i, k - i);
+		_ncat(t, buf + i, k - i);
 	else
-		_strncpy(t, buf + i, k - i + 1);
+		cpy(t, buf + i, k - i + 1);
 
 	s += k - i;
 	i = k;
