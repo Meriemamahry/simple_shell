@@ -164,7 +164,9 @@ int _myalias(info_t *);
 
 ssize_t get_input(info_t *);
 int _getline(info_t *, char **, size_t *);
-void sigintHandler(int);
+void sigHandle(int);
+ssize_t inbuf(info_t *, char **, size_t *);
+ssize_t readbuf(info_t *, char *, size_t *);
 
 void clear_info(info_t *);
 void set_info(info_t *, char **);
@@ -180,11 +182,11 @@ char **get_environ(info_t *);
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
 
-char *get_history_file(info_t *info);
-int write_history(info_t *info);
-int read_history(info_t *info);
-int build_history_list(info_t *info, char *buf, int linecount);
-int renumber_history(info_t *info);
+char *getHistory(info_t *);
+int writeHistory(info_t *);
+int readHistory(info_t *);
+int buildHistory(info_t *, char *, int);
+int renumberHistory(info_t *);
 
 list_t *add_node(list_t **, const char *, int);
 list_t *add_node_end(list_t **, const char *, int);
