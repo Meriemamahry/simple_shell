@@ -125,23 +125,23 @@ int _strcmp(char *, char *);
 char *starts_with(const char *, const char *);
 char *_strcat(char *, char *);
 
-char *_strcpy(char *, char *);
+char *cpy(char *, char *);
 char *_strdup(const char *);
 void _puts(char *);
 int _putchar(char);
 
 char *_strncpy(char *, char *, int);
-char *_strncat(char *, char *, int);
-char *_strchr(char *, char);
+char *_ncat(char *, char *, int);
+char *str_chr(char *, char);
 
-char **strtow(char *, char *);
-char **strtow2(char *, char);
+char **strtw(char *, char *);
+char **strt2(char *, char);
 
 char *_memset(char *, char, unsigned int);
 void ffree(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 
-int bfree(void **);
+int f_ree(void **);
 
 int intera(info_t *);
 int delim(char, char *);
@@ -158,8 +158,11 @@ int _exiit(info_t *);
 int change_dir(info_t *);
 int _ch(info_t *);
 
-int _myhistory(info_t *);
-int _myalias(info_t *);
+int hist(info_t *);
+int monAlias(info_t *);
+int unsetAlias(info_t *, char *);
+int setAlias(info_t *, char *);
+int printAlias(list_t *);
 
 ssize_t getIn(info_t *);
 int _getline(info_t *, char **, size_t *);
