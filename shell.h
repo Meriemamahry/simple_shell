@@ -125,12 +125,12 @@ int _strcmp(char *, char *);
 char *starts_with(const char *, const char *);
 char *_strcat(char *, char *);
 
-char *cpy(char *, char *);
+char *_strcpy(char *, char *);
 char *_strdup(const char *);
 void _puts(char *);
 int _putchar(char);
 
-char *_strncpy(char *, char *, int);
+char *cpy(char *, char *, int);
 char *_ncat(char *, char *, int);
 char *str_chr(char *, char);
 
@@ -198,7 +198,7 @@ void free_list(list_t **);
 
 size_t list_len(const list_t *);
 char **list_to_strings(list_t *);
-size_t print_list(const list_t *);
+size_t printList(const list_t *);
 list_t *node_starts_with(list_t *, char *, char);
 ssize_t get_node_index(list_t *, list_t *);
 
