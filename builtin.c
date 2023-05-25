@@ -34,7 +34,8 @@ return (-2);
  */
 int change_dir(info_t *i)
 {
-int ret, *s, *d, buffer[1024];
+char *s, *d, buffer[1024];
+int ret;
 
 s = getcwd(buffer, 1024);
 if (!s)
@@ -43,8 +44,7 @@ if (!i->argv[1])
 {
 d = _getenv(i, "HOME=");
 if (!d)
-ret =
-chdir((d = _getenv(i, "PWD=")) ? d : "/");
+ret = chdir((d = _getenv(i, "PWD=")) ? d : "/");
 else
 ret = chdir(d);
 }
