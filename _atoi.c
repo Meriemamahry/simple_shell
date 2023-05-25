@@ -53,7 +53,7 @@ int toint(char *k)
 {
 unsigned int l = 0;
 int i;
-int s = 1, f = 0;
+int s = 1, f = 0, output;
 
 for (i = 0;  k[i] != '\0' && f != 2; i++)
 {
@@ -69,7 +69,7 @@ else if (f == 1)
 f = 2;
 }
 if (s == -1)
-return (-result);
+return (-l);
 else
-return (result);
+return (l);
 }
