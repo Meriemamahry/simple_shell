@@ -197,11 +197,11 @@ size_t print_list_str(const list_t *);
 int delete_node_at_index(list_t **, unsigned int);
 void free_list(list_t **);
 
-size_t list_len(const list_t *);
-char **list_to_strings(list_t *);
-size_t printList(const list_t *);
-list_t *node_starts_with(list_t *, char *, char);
-ssize_t get_node_index(list_t *, list_t *);
+size_t tollist(const list_t *);
+char **ilastring(list_t *);
+size_t printListing(const list_t *);
+list_t *nodetabda(list_t *, char *, char);
+ssize_t ijbadnode(list_t *, list_t *);
 
 int is_chain(info_t *, char *, size_t *);
 void check_chain(info_t *, char *, size_t *, size_t, size_t);
