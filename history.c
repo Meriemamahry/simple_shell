@@ -10,7 +10,7 @@ char *getHistory(info_t *i)
 {
 	char *c, *d;
 
-	d = _getenv(i, "HOME=");
+	d = _getenviron(i, "HOME=");
 	if (!d)
 		return (NULL);
 	c = malloc(sizeof(char) * (_strlen(d) + _strlen(HIST_FILE) + 2));
