@@ -36,7 +36,7 @@ int main(int c, char **v)
 		}
 		i->readfd = d;
 	}
-	populate_env_list(i);
+	envlist(i);
 	readHistory(i);
 	hsh(i, v);
 	return (EXIT_SUCCESS);
