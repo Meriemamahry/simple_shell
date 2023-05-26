@@ -44,7 +44,7 @@ if (information->argc != 3)
 ptu("Incorrect number\n");
 return (1);
 }
-if (_setenv(information, information->argv[1], information->argv[2]))
+if (_weset(information, information->argv[1], information->argv[2]))
 return (0);
 return (1);
 }
