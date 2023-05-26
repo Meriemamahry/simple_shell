@@ -42,7 +42,7 @@ continue;
 nodeinfor = nodeinfor->next;
 i++;
 }
-return (info->env_changed);
+return (information->env_changed);
 }
 
 /**
