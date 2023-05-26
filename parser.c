@@ -9,7 +9,7 @@ int is_exec(info_t *i, char *pt)
 {
 struct stat t;
 
- (void)i;
+(void)i;
 if (!pt || stat(pt, &t))
 {
 return (0);
