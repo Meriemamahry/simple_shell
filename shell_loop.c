@@ -93,7 +93,7 @@ if (!delim(info->arg[i], " \t\n"))
 m++;
 if (!m)
 return;
-path = find_path(info, _getenv(info, "PATH="), info->argv[0]);
+path = find_path(info, _getenviron(info, "PATH="), info->argv[0]);
 if (path)
 {
 info->path = path;
@@ -129,7 +129,7 @@ return;
 }
 if (child_pid == 0)
 {
-if (execve(info->path, info->argv, get_environ(info)) == -1)
+if (execve(info->path, info->argv, envget(info)) == -1)
 {
 freation(info, 1);
 if (errno == EACCES)
