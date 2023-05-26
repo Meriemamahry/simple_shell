@@ -7,7 +7,7 @@
  */
 int _envm(info_t *information)
 {
-print_list_str(information->env);
+printlist(information->env);
 return (0);
 }
 
@@ -79,7 +79,7 @@ size_t k;
 list_t *n = NULL;
 
 for (k = 0; environ[k]; k++)
-add_node_end(&n, environ[k], 0);
+ajouter_fin(&n, environ[k], 0);
 information->env = n;
 return (0);
 }
