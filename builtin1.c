@@ -107,7 +107,7 @@ int monAlias(info_t *i)
 		}
 		else
 		{
-			printAlias(node_starts_with(i->alias, i->argv[k], '='));
+			printAlias(nodetabda(i->alias, i->argv[k], '='));
 		}
 	}
 
