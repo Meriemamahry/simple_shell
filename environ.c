@@ -64,7 +64,7 @@ ptu("Too few arguements.\n");
 return (1);
 }
 for (i = 1; i <= information->argc; i++)
-_unsetenv(information, information->argv[i]);
+_envntset(information, information->argv[i]);
 return (0);
 }
 
