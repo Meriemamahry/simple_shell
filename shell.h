@@ -191,11 +191,11 @@ int readHistory(info_t *);
 int buildHistory(info_t *, char *, int);
 int renumberHistory(info_t *);
 
-list_t *add_node(list_t **, const char *, int);
-list_t *add_node_end(list_t **, const char *, int);
-size_t print_list_str(const list_t *);
-int delete_node_at_index(list_t **, unsigned int);
-void free_list(list_t **);
+list_t *ajouternoeud(list_t **, const char *, int);
+list_t *ajouter_fin(list_t **, const char *, int);
+size_t printlist(const list_t *);
+int supprimerlist(list_t **, unsigned int);
+void freelist(list_t **);
 
 size_t tollist(const list_t *);
 char **ilastring(list_t *);
