@@ -9,7 +9,7 @@ char **envget(info_t *information)
 {
 if (!information->environ || information->env_changed)
 {
-information->environ = list_to_strings(information->env);
+information->environ = ilastring(information->env);
 information->env_changed = 0;
 }
 return (information->environ);
