@@ -1,59 +1,59 @@
 #include "shell.h"
 
 /**
- **_memset - constant byte
- *@s: the pointer
- *@byt: the byte
- *@n: the amount of bytes to be filled
+ **_memo - byte byte byte
+ *@po: the pointer
+ *@byt_e: the byte
+ *@n:bytes to be filled
  *Return: pointer
  */
-char *_memset(char *s, char byt, unsigned int n)
+char *_memo(char *po, char byt_e, unsigned int n)
 {
 unsigned int k;
 
 for (k = 0; k < n; k++)
-s[k] = byt;
-return (s);
+po[k] = byt_e;
+return (po);
 }
 
 /**
- * ffree - frees a string of strings
- * @pp: string of strings
+ * forfr - frees a string of strings
+ * @pop: string of strings
  */
-void ffree(char **pp)
+void forfr(char **pop)
 {
-char **a = pp;
+char **a = pop;
 
-if (!pp)
+if (!pop)
 return;
-while (*pp)
-free(*pp++);
+while (*pop)
+free(*pop++);
 free(a);
 }
 
 /**
- * _realloc - reallocates
- * @ptr: pointer to pre
- * @old_size: byte size
- * @new_size: byte size
+ * _realmadrid - reallocates
+ * @potr: pointer to pre
+ * @old_si: byte size
+ * @new_si: byte size
  * Return: pointer
  */
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+void *_realmadrid(void *potr, unsigned int old_si, unsigned int new_si)
 {
 char *po;
 
-if (!ptr)
-return (malloc(new_size));
-if (!new_size)
-return (free(ptr), NULL);
-if (new_size == old_size)
-return (ptr);
-po = malloc(new_size);
+if (!potr)
+return (malloc(new_si));
+if (!new_si)
+return (free(potr), NULL);
+if (new_si == old_si)
+return (potr);
+po = malloc(new_si);
 if (!po)
 return (NULL);
-old_size = old_size < new_size ? old_size : new_size;
-while (old_size--)
-po[old_size] = ((char *)ptr)[old_size];
-free(ptr);
+old_si = old_si < new_si ? old_si : new_si;
+while (old_si--)
+po[old_si] = ((char *)potr)[old_si];
+free(potr);
 return (po);
 }
