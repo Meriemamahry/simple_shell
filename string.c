@@ -1,70 +1,70 @@
 #include "shell.h"
 
 /**
- * _strlen - len of string
- * @s: the string to check
- * Return: length
+ * _strlen - return the length of string
+ * @k: a string
+ * Return: the length
  */
-int _strlen(char *s)
+int _strlen(char *k)
 {
-int i = 0;
+  int length = 0;
+  
+    if (!k)
+        return 0;
+    while (k[length] != '\0')
+        length++;
 
-if (!s)
-return (0);
-while (*s++)
-i++;
-return (i);
+    return length;
 }
 
 /**
- * _strcmp - compare two strings
- * @str1: the first string
- * @str2: the second string
+ * _strcmp - Compares 2 strings
+ * @s1: a string
+ * @s2: a string
  * Return: -1 or 1 or 0
  */
-int _strcmp(char *str1, char *str2)
+int _strcmp(char *s1, char *s2)
 {
-while (*str1 && *str2)
-{
-if (*str1 != *str2)
-return (*str1 - *str2);
-str1++;
-str2++;
-}
-if (*str1 == *str2)
-return (0);
-else
-return (*str1 < *str2 ? -1 : 1);
+  while (*s1 && *s2)
+  {
+    if (*s1 != *s2)
+      return (*s1 - *s2);
+    s1++;
+    s2++;
+  }
+  if (*s1 == *s2)
+    return (0);
+  else
+    return (*s1 < *s2 ? -1 : 1);
 }
 
 /**
- * starts_with - checks if tack started with needl
- * @tack: string to search
- * @needl: the substring to find
- * Return: address or null
+ * starts_with - checks if c started with k
+ * @c: a string
+ * @k: a substring string
+ * Return: Address
  */
-char *starts_with(const char *tack, const char *needl)
+char *starts_with(const char *c, const char *k)
 {
-while (*needl)
-if (*needl++ != *tack++)
-return (NULL);
-return ((char *)tack);
+  while (*k)
+    if (*k++ != *c++)
+      return (NULL);
+  return ((char *)c);
 }
-
 /**
- * _strcat - concatenates two strings
- * @desti: destination buffer
- * @src: source buffer
+ * _strcat - Concatenates 2 strings
+ * @k: a string(pointer)
+ * @s: pointer (string)
  * Return: pointer
  */
-char *_strcat(char *desti, char *src)
+char *_strcat(char *k, char *s)
 {
-char *ret = desti;
+  char *i = k;
 
-while (*desti)
-desti++;
-while (*src)
-*desti++ = *src++;
-*desti = *src;
-return (ret);
+  while (*k)
+    k++;
+  while (*s)
+    *k++ = *s++;
+  *k = *s;
+  return (i);
 }
