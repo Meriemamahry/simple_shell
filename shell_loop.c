@@ -93,7 +93,7 @@ if (!delim(info->arg[i], " \t\n"))
 m++;
 if (!m)
 return;
-path = find_path(info, _getenviron(info, "PATH="), info->argv[0]);
+path = findPath(info, _getenviron(info, "PATH="), info->argv[0]);
 if (path)
 {
 info->path = path;
@@ -102,7 +102,7 @@ fork_cmd(info);
 else
 {
 if ((intera(info) || _getenviron(info, "PATH=")
-|| info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
+|| info->argv[0][0] == '/') && is_exec(info, info->argv[0]))
 fork_cmd(info);
 else if (*(info->arg) != '\n')
 {
