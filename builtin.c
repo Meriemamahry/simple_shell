@@ -42,23 +42,23 @@ if (!s)
 _puts("TODO: >>getcwd failure emsg here<<\n");
 if (!i->argv[1])
 {
-d = _getenv(i, "HOME=");
+d = _getenviron(i, "HOME=");
 if (!d)
-ret = chdir((d = _getenv(i, "PWD=")) ? d : "/");
+ret = chdir((d = _getenviron(i, "PWD=")) ? d : "/");
 else
 ret = chdir(d);
 }
 else if (_strcmp(i->argv[1], "-") == 0)
 {
-if (!_getenv(i, "OLDPWD="))
+if (!_getenviron(i, "OLDPWD="))
 {
 _puts(s);
 _putchar('\n');
 return (1);
 }
-_puts(_getenv(i, "OLDPWD=")), _putchar('\n');
+_puts(_getenviron(i, "OLDPWD=")), _putchar('\n');
 ret =
-chdir((d = _getenv(i, "OLDPWD=")) ? d : "/");
+chdir((d = _getenviron(i, "OLDPWD=")) ? d : "/");
 }
 else
 ret = chdir(i->argv[1]);
@@ -69,7 +69,7 @@ ptu(i->argv[1]), ptu_char('\n');
 }
 else
 {
-	_setenv(i, "OLDPWD", _getenv(i, "PWD="));
+	_setenv(i, "OLDPWD", _getenviron(i, "PWD="));
 	_setenv(i, "PWD", getcwd(buffer, 1024));
 }
 return (0);
