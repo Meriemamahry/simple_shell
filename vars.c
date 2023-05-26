@@ -110,24 +110,24 @@ if (information->argv[i][0] != '$' || !information->argv[i][1])
 continue;
 if (!_strcmp(information->argv[i], "$?"))
 {
-replace_string(&(information->argv[i]),
+bdlstr(&(information->argv[i]),
 _strdup(convnum(information->status, 10, 0)));
 continue;
 }
 if (!_strcmp(information->argv[i], "$$"))
 {
-replace_string(&(information->argv[i]),
+bdlstr(&(information->argv[i]),
 _strdup(convnum(getpid(), 10, 0)));
 continue;
 }
 nodetqwd = nodetabda(information->env, &information->argv[i][1], '=');
 if (nodetqwd)
 {
-replace_string(&(information->argv[i]),
+bdlstr(&(information->argv[i]),
 _strdup(str_chr(nodetqwd->str, '=') + 1));
 continue;
 }
-replace_string(&information->argv[i], _strdup(""));
+bdlstr(&information->argv[i], _strdup(""));
 }
 return (0);
 }
