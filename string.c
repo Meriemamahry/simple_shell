@@ -10,7 +10,7 @@ int _strlen(char *k)
 int length = 0;
 
 if (!k)
-return 0;
+return (0);
 while (k[length] != '\0')
 length++;
 return (length);
