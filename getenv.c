@@ -34,7 +34,7 @@ while (nodeinfor)
 p = starts_with(nodeinfor->str, varan);
 if (p && *p == '=')
 {
-information->env_changed = delete_node_at_index(&(information->env), i);
+information->env_changed = supprimerlist(&(information->env), i);
 i = 0;
 nodeinfor = information->env;
 continue;
@@ -79,7 +79,7 @@ return (0);
 }
 nodeinfor = nodeinfor->next;
 }
-add_node_end(&(information->env), buff, 0);
+ajouter_fin(&(information->env), buff, 0);
 free(buff);
 information->env_changed = 1;
 return (0);
