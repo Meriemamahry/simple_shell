@@ -7,14 +7,13 @@
  */
 int _strlen(char *k)
 {
-  int length = 0;
-  
-    if (!k)
-        return 0;
-    while (k[length] != '\0')
-        length++;
+int length = 0;
 
-    return length;
+if (!k)
+return 0;
+while (k[length] != '\0')
+length++;
+return (length);
 }
 
 /**
@@ -25,17 +24,17 @@ int _strlen(char *k)
  */
 int _strcmp(char *s1, char *s2)
 {
-  while (*s1 && *s2)
-  {
-    if (*s1 != *s2)
-      return (*s1 - *s2);
-    s1++;
-    s2++;
-  }
-  if (*s1 == *s2)
-    return (0);
-  else
-    return (*s1 < *s2 ? -1 : 1);
+while (*s1 && *s2)
+{
+if (*s1 != *s2)
+return (*s1 - *s2);
+s1++;
+s2++;
+}
+if (*s1 == *s2)
+return (0);
+else
+return (*s1 < *s2 ? -1 : 1);
 }
 
 /**
@@ -46,10 +45,10 @@ int _strcmp(char *s1, char *s2)
  */
 char *starts_with(const char *c, const char *k)
 {
-  while (*k)
-    if (*k++ != *c++)
-      return (NULL);
-  return ((char *)c);
+while (*k)
+if (*k++ != *c++)
+return (NULL);
+return ((char *)c);
 }
 /**
  * _strcat - Concatenates 2 strings
@@ -59,12 +58,12 @@ char *starts_with(const char *c, const char *k)
  */
 char *_strcat(char *k, char *s)
 {
-  char *i = k;
+char *i = k;
 
-  while (*k)
-    k++;
-  while (*s)
-    *k++ = *s++;
-  *k = *s;
-  return (i);
+while (*k)
+k++;
+while (*s)
+*k++ = *s++;
+*k = *s;
+return (i);
 }
