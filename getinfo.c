@@ -56,7 +56,7 @@ if (allocez)
 if (!information->cmd_buf)
 free(information->arg);
 if (information->env)
-free_list(&(information->env));
+freelist(&(information->env));
 if (information->history)
 free_list(&(information->history));
 if (information->alias)
