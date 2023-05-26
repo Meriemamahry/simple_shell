@@ -138,9 +138,9 @@ char *str_chr(char *, char);
 char **strtw(char *, char *);
 char **strt2(char *, char);
 
-char *_memset(char *, char, unsigned int);
-void ffree(char **);
-void *_realloc(void *, unsigned int, unsigned int);
+char *_memo(char *, char, unsigned int);
+void forfr(char **);
+void *_realmadrid(void *, unsigned int, unsigned int);
 
 int f_ree(void **);
 
