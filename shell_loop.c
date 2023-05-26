@@ -55,8 +55,8 @@ builtin_table builtintbl[] = {
 {"env", _myenv},
 {"help", _ch},
 {"history", hist},
-{"setenv", _mysetenv},
-{"unsetenv", _myunsetenv},
+{"setenv", _mymoon},
+{"unsetenv", _mydok},
 {"cd", change_dir},
 {"alias", monAlias},
 {NULL, NULL}
