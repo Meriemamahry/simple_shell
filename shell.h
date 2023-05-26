@@ -171,9 +171,9 @@ void sigHandle(int);
 ssize_t inbuf(info_t *, char **, size_t *);
 ssize_t readbuf(info_t *, char *, size_t *);
 
-void clear_info(info_t *);
-void set_info(info_t *, char **);
-void free_info(info_t *, int);
+void clearation(info_t *);
+void setaion(info_t *, char **);
+void freation(info_t *, int);
 
 char *_getenviron(info_t *, const char *);
 int _envm(info_t *);
