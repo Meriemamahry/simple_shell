@@ -48,7 +48,7 @@ replace_vars(information);
  */
 void freation(info_t *information, int allocez)
 {
-f_ree(information->argv);
+forfr(information->argv);
 information->argv = NULL;
 information->path = NULL;
 if (allocez)
@@ -61,7 +61,7 @@ if (information->history)
 free_list(&(information->history));
 if (information->alias)
 free_list(&(information->alias));
-ffree(information->environ);
+forfr(information->environ);
 information->environ = NULL;
 f_ree((void **)information->cmd_buf);
 if (information->readfd > 2)
