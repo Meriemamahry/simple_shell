@@ -69,8 +69,8 @@ ptu(i->argv[1]), ptu_char('\n');
 }
 else
 {
-	_setenv(i, "OLDPWD", _getenviron(i, "PWD="));
-	_setenv(i, "PWD", getcwd(buffer, 1024));
+	_weset(i, "OLDPWD", _getenviron(i, "PWD="));
+	_weset(i, "PWD", getcwd(buffer, 1024));
 }
 return (0);
 }
