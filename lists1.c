@@ -75,7 +75,7 @@ return (i);
 }
 
 /**
- * nodetabda - returns node whose string starts 
+ * nodetabda - returns node whose string starts
  * @nodetqwd: pointer to list head
  * @prefix: string to match
  * @c: the next character after prefix to match
@@ -97,7 +97,7 @@ return (NULL);
 
 /**
  * ijbadnode - gets the index of
- * @heado: pointer to list 
+ * @heado: pointer to list
  * @nodetqwd: pointer to the n
  * Return: index
  */
