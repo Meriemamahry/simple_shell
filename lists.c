@@ -28,7 +28,7 @@ return (NULL);
 }
 }
 new_headop->next = *heado;
-*head = new_headop;
+*heado = new_headop;
 return (new_headop);
 }
 
