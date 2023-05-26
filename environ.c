@@ -1,86 +1,85 @@
 #include "shell.h"
 
 /**
- * _myenv - prints the current environment
- * @info: Structure
+ * _envm - prints the current environment
+ * @information: Structure
  * Return: 0
  */
-int _myenv(info_t *info)
+int _envm(info_t *information)
 {
-	print_list_str(info->env);
-	return (0);
+print_list_str(information->env);
+return (0);
 }
 
 /**
- * _getenv - gets the value of an environ variable
- * @info: Structure
- *@name: const char
+ * _getenviron - gets the value of an environ variable
+ * @information: Structure
+ * @name: const char
  * Return: the value
  */
-char *_getenv(info_t *info, const char *name)
+char *_getenviron(info_t *information, const char *nom)
 {
-	char *s;
-	list_t *n = info->env;
+char *sok;
+list_t *n = information->env;
 
-	while (n)
-	{
-		s = starts_with(n->str, name);
-		if (s && *s)
-			return (s);
-		n = n->next;
-	}
-	return (NULL);
+while (n)
+{
+sok = starts_with(n->str, nom);
+if (sok && *sok)
+return (sok);
+n = n->next;
+}
+return (NULL);
 }
 
 /**
- * _mysetenv - initialize var
- * @info: Structure
+ * _mymoon - initialize var with kaka
+ * @information: Structure
  *  Return: 0
  */
-int _mysetenv(info_t *info)
+int _mymoon(info_t *information)
 {
-	if (info->argc != 3)
-	{
-		ptu("Incorrect number\n");
-		return (1);
-	}
-	if (_setenv(info, info->argv[1], info->argv[2]))
-		return (0);
-	return (1);
+if (information->argc != 3)
+{
+ptu("Incorrect number\n");
+return (1);
+}
+if (_setenv(information, information->argv[1], information->argv[2]))
+return (0);
+return (1);
 }
 
 /**
- * _myunsetenv - Remove an envi variable
- * @info: Structure
+ * _mydok - Remove an envi
+ * @information: Structure
  *  Return: 0
  */
-int _myunsetenv(info_t *info)
+int _mydok(info_t *information)
 {
-	int i;
+int i;
 
-	if (info->argc == 1)
-	{
-		ptu("Too few arguements.\n");
-		return (1);
-	}
-	for (i = 1; i <= info->argc; i++)
-		_unsetenv(info, info->argv[i]);
-
-	return (0);
+if (information->argc == 1)
+{
+ptu("Too few arguements.\n");
+return (1);
+}
+for (i = 1; i <= information->argc; i++)
+_unsetenv(information, information->argv[i]);
+return (0);
 }
 
 /**
- * populate_env_list - env list
- * @info: Structure
+ * envlist - env list
+ * @information: Structure
  * Return: 0
  */
-int populate_env_list(info_t *info)
+int envlist(info_t *information)
 {
-	size_t i;
-	list_t *n = NULL;
+size_t k;
+list_t *n = NULL;
 
-	for (i = 0; environ[i]; i++)
-		add_node_end(&n, environ[i], 0);
-	info->env = n;
-	return (0);
+for (k = 0; environ[k]; k++)
+add_node_end(&n, environ[k], 0);
+information->env = n;
+return (0);
 }
