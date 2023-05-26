@@ -65,7 +65,7 @@ ssize_t getIn(info_t *i)
 		check_chain(i, b, &j, t, l);
 		while (j < l)
 		{
-			if (is_chain(i, b, &j))
+			if (washchaine(i, b, &j))
 				break;
 			j++;
 		}
