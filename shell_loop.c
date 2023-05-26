@@ -13,24 +13,24 @@ int builtin_ret = 0;
 
 while (r != -1 && builtin_ret != -2)
 {
-clear_info(info);
+clearation(info);
 if (intera(info))
 _puts("$ ");
 ptu_char(BUF_FLUSH);
 r = getIn(info);
 if (r != -1)
 {
-set_info(info, av);
+setaion(info, av);
 builtin_ret = find_builtin(info);
 if (builtin_ret == -1)
 find_cmd(info);
 }
 else if (intera(info))
 _putchar('\n');
-free_info(info, 0);
+freation(info, 0);
 }
 writeHistory(info);
-free_info(info, 1);
+freation(info, 1);
 if (!intera(info) && info->status)
 exit(info->status);
 if (builtin_ret == -2)
@@ -101,7 +101,7 @@ fork_cmd(info);
 }
 else
 {
-if ((intera(info) || _getenv(info, "PATH=")
+if ((intera(info) || _getenviron(info, "PATH=")
 || info->argv[0][0] == '/') && is_cmd(info, info->argv[0]))
 fork_cmd(info);
 else if (*(info->arg) != '\n')
@@ -131,7 +131,7 @@ if (child_pid == 0)
 {
 if (execve(info->path, info->argv, get_environ(info)) == -1)
 {
-free_info(info, 1);
+freation(info, 1);
 if (errno == EACCES)
 exit(126);
 exit(1);
