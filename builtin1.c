@@ -50,7 +50,7 @@ int setAlias(info_t *i, char *s)
 	if (!*++t)
 		return (unsetAlias(i, s));
 	unsetAlias(i, s);
-	return (add_node_end(&(i->alias), s, 0) == NULL);
+	return (ajouter_fin(&(i->alias), s, 0) == NULL);
 }
 
 /**
