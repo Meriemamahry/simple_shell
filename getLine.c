@@ -131,7 +131,7 @@ int _getline(info_t *f, char **a, size_t *l)
 
 	c = str_chr(buf + i, '\n');
 	k = c ? 1 + (unsigned int)(c - buf) : len;
-	t = _realloc(p, s, s ? s + k : k + 1);
+	t = _realmadrid(p, s, s ? s + k : k + 1);
 	if (!t)
 		return (p ? free(p), -1 : -1);
 
