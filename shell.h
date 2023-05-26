@@ -181,9 +181,9 @@ int _mymoon(info_t *);
 int _mydok(info_t *);
 int envlist(info_t *);
 
-char **get_environ(info_t *);
-int _unsetenv(info_t *, char *);
-int _setenv(info_t *, char *, char *);
+char **envget(info_t *);
+int _envntset(info_t *, char *);
+int _weset(info_t *, char *, char *);
 
 char *getHistory(info_t *);
 int writeHistory(info_t *);
