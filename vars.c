@@ -23,7 +23,7 @@ buf[j] = 0;
 j++;
 information->cmd_buf_type = CMD_AND;
 }
-else if (buf[j] == ';') 
+else if (buf[j] == ';')
 {
 buf[j] = 0;
 information->cmd_buf_type = CMD_CHAIN;
@@ -36,28 +36,28 @@ return (1);
 
 /**
  * check_chain - checks last status
- * @information: struct
+ * @informa: struct
  * @buf: the char buffer
  * @p: address of current position
  * @i: starting position in buf
  * @len: length of buf
  * Return: Void
  */
-void check_chain(info_t *information, char *buf, size_t *p, size_t i, size_t len)
+void check_chain(info_t *informa, char *buf, size_t *p, size_t i, size_t len)
 {
 size_t j = *p;
 
-if (information->cmd_buf_type == CMD_AND)
+if (informa->cmd_buf_type == CMD_AND)
 {
-if (information->status)
+if (informa->status)
 {
 buf[i] = 0;
 j = len;
 }
 }
-if (information->cmd_buf_type == CMD_OR)
+if (informa->cmd_buf_type == CMD_OR)
 {
-if (!information->status)
+if (!informa->status)
 {
 buf[i] = 0;
 j = len;
