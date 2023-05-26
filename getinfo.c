@@ -58,9 +58,9 @@ free(information->arg);
 if (information->env)
 freelist(&(information->env));
 if (information->history)
-free_list(&(information->history));
+freelist(&(information->history));
 if (information->alias)
-free_list(&(information->alias));
+freelist(&(information->alias));
 forfr(information->environ);
 information->environ = NULL;
 f_ree((void **)information->cmd_buf);
