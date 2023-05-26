@@ -89,8 +89,8 @@ while (nodetqwd)
 {
 p = starts_with(nodetqwd->str, prefix);
 if (p && ((c == -1) || (*p == c)))
-return (node);
-node = node->next;
+return (nodetqwd);
+nodetqwd = nodetqwd->next;
 }
 return (NULL);
 }
