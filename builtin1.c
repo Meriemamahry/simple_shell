@@ -6,7 +6,7 @@
  */
 int hist(info_t *i)
 {
-	printList(i->history);
+	printListing(i->history);
 	return (0);
 }
 /**
@@ -27,8 +27,8 @@ int unsetAlias(info_t *i, char *s)
 		return (1);
 	}
 	*p = 0;
-	k = delete_node_at_index(&(i->alias),
-		get_node_index(i->alias, node_starts_with(i->alias, s, -1)));
+	k = supprimerlist(&(i->alias),
+		ijbadnode(i->alias, nodetabda(i->alias, s, -1)));
 	*p = t;
 	return (k);
 }
