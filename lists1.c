@@ -25,7 +25,7 @@ return (i);
 char **ilastring(list_t *heado)
 {
 list_t *nodetqwd = heado;
-size_t i = list_len(heado), j;
+size_t i = tollist(heado), j;
 char **strs;
 char *str;
 
@@ -66,7 +66,7 @@ while (heado)
 _puts(convnum(heado->num, 10, 0));
 _putchar(':');
 _putchar(' ');
-_puts(heado->str ? h->str : "(nil)");
+_puts(heado->str ? heado->str : "(nil)");
 _puts("\n");
 heado = heado->next;
 i++;
@@ -87,7 +87,7 @@ char *p = NULL;
 
 while (nodetqwd)
 {
-p = starts_with(node->str, prefix);
+p = starts_with(nodetqwd->str, prefix);
 if (p && ((c == -1) || (*p == c)))
 return (node);
 node = node->next;
