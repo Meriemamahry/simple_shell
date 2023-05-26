@@ -1,82 +1,82 @@
 #include "shell.h"
 
 /**
- * _strcpy - copies a string
- * @dest: the destination
- * @src: the source
+ * _strcpy - copies a strin
+ * @destination: the destination
+ * @srce: the source
  * Return: pointer to destination
  */
-char *_strcpy(char *dest, char *src)
+char *_strcpy(char *destination, char *srce)
 {
 int i = 0;
 
-if (dest == src || src == 0)
-return (dest);
-while (src[i])
+if (destination == srce || srce == 0)
+return (destination);
+while (srce[i])
 {
-dest[i] = src[i];
+destination[i] = srce[i];
 i++;
 }
-dest[i] = 0;
-return (dest);
+destination[i] = 0;
+return (destination);
 }
 
 /**
  * _strdup - duplicates a string
- * @str: string to duplicate
+ * @srce: string to duplicate
  * Return: pointer to the duplicated string
  */
-char *_strdup(const char *str)
+char *_strdup(const char *srce)
 {
 int leng = 0;
 char *ret;
 
-if (str == NULL)
+if (srce == NULL)
 return (NULL);
-while (*str++)
+while (*srce++)
 leng++;
 ret = malloc(sizeof(char) * (leng + 1));
 if (!ret)
 return (NULL);
 for (leng++; leng--;)
-ret[leng] = *--str;
+ret[leng] = *--srce;
 return (ret);
 }
 
 /**
  *_puts - prints input str
- *@str: string to be printed
+ *@srce: string to be printed
  * Return: Nothing
  */
-void _puts(char *str)
+void _puts(char *srce)
 {
 int i = 0;
 
-if (!str)
+if (!srce)
 return;
-while (str[i] != '\0')
+while (srce[i] != '\0')
 {
-_putchar(str[i]);
+_putchar(srce[i]);
 i++;
 }
 }
 
 /**
  * _putchar - c to stdout
- * @c: character to print
+ * @srce: character to print
  * Return: 1 o -1
  */
-int _putchar(char c)
+int _putchar(char srce)
 {
 static int j;
 static char buf[WRITE_BUF_SIZE];
 
-if (c == BUF_FLUSH || j >= WRITE_BUF_SIZE)
+if (srce == BUF_FLUSH || j >= WRITE_BUF_SIZE)
 {
 write(1, buf, j);
 j = 0;
 }
-if (c != BUF_FLUSH)
-buf[j++] = c;
+if (srce != BUF_FLUSH)
+buf[j++] = srce;
 return (1);
 }
