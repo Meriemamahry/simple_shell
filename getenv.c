@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * envget - returns the string 
+ * envget - returns the string
  * @information: Structure containing poten
  * Return: 0
  */
@@ -16,7 +16,7 @@ return (information->environ);
 }
 
 /**
- * _envntset - Remove an environment 
+ * _envntset - Remove an environment
  * @information: Structure containing potential arguments
  *  Return: 1 or 0
  * @varan: the string env var property
